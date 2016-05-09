@@ -39,6 +39,8 @@ let g:indentLine_showFirstIndentLevel = 1
 " styling
 set title "set terminal title
 set number "show line numbers
+set list
+set listchars=eol:¬
 set autoindent
 set smartindent
 
