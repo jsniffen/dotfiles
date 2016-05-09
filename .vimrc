@@ -20,6 +20,12 @@ Plug 'scrooloose/syntastic' "syntax checking for vim
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-sleuth'
 
+" language plugins
+Plug 'pangloss/vim-javascript'
+Plug 'mattn/emmet-vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'burnettk/vim-angular'
+
 call plug#end()
 
 " colorscheme
@@ -30,6 +36,10 @@ let base16colorspace=256
 colorscheme base16-ocean
 
 " tabs
+set expandtab " insert spaces rather than tabs for <Tab>
+set tabstop=4 " the visible width of tabs
+set softtabstop=4 " edit as if the tabs are 4 characters wide
+set shiftwidth=4 " number of spaces to use for indent and unindent
 let g:airline#extensions#whitespace#mixed_indent_algo = 1 " certain number of spaces are allowed after tabs, but not in between
 let g:indentLine_color_term = 8
 let g:indentLine_char = '▸'
@@ -62,6 +72,10 @@ let g:ctrlp_working_path_mode='0'
 
 " airline
 set laststatus=2
-set timeoutlen=50
+" set timeoutlen=50
 let g:airline_theme='base16'
 let g:airline_powerline_fonts=1
+
+" emmet
+" javascript libraries syntax
+let g:used_javascript_libs = 'jquery,angularjs,angularui,angularuirouter'
