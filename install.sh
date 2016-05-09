@@ -18,9 +18,9 @@ echo "...done"
 echo "Moving the existing .config folder to $olddir"
 mv ~/.config $olddir
 echo "...done"
-echo "Copying the new .config folder to ~"
 
-cp $dir/.config ~
+echo "Copying the new .config folder to ~"
+cp -r $dir/.config ~
 echo "...done"
 
 for file in $files; do
