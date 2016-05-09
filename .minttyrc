@@ -1,0 +1,12 @@
+BoldAsFont=no
+Font=Source Code Pro
+FontHeight=14
+FontSmoothing=partial
+Locale=en_US
+Charset=UTF-8
+Term=xterm-256color
+FontWeight=400
+ClicksPlaceCursor=yes
+FontIsBold=no
+BellType=0
+Scrollbar=none

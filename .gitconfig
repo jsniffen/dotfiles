@@ -1,0 +1,6 @@
+[core]
+	autocrlf = false
+	safecrlf = true
+	eol = lf
+[user]
+	email = julian.sniffen@gmail.com
