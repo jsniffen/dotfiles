@@ -33,7 +33,7 @@ set background=dark
 set t_Co=256
 set term=screen-256color
 let base16colorspace=256
-colorscheme base16-ocean
+colorscheme base16-monokai
 
 " tabs
 set expandtab " insert spaces rather than tabs for <Tab>
