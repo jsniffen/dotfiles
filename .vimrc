@@ -72,7 +72,7 @@ let g:ctrlp_working_path_mode='0'
 
 " airline
 set laststatus=2
-" set timeoutlen=50
+set timeoutlen=1000 ttimeoutlen=0
 let g:airline_theme='base16'
 let g:airline_powerline_fonts=1
 
