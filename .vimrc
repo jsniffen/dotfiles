@@ -28,6 +28,8 @@ Plug 'burnettk/vim-angular'
 
 call plug#end()
 
+set noswapfile " don't create backup files
+
 " colorscheme
 set background=dark
 set t_Co=256
