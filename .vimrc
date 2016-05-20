@@ -15,6 +15,8 @@ Plug 'vim-airline/vim-airline' "status bar
 Plug 'vim-airline/vim-airline-themes' "themes for vim air-line
 Plug 'Raimondi/delimitMate' "automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'scrooloose/syntastic' "syntax checking for vim
+Plug 'Shougo/neocomplete.vim' "autocomplete
+Plug 'ervandew/supertab' "use tab for autocomplete
 
 " tabs
 Plug 'Yggdroot/indentLine'
@@ -81,3 +83,7 @@ let g:airline_powerline_fonts=1
 " emmet
 " javascript libraries syntax
 let g:used_javascript_libs = 'jquery,angularjs,angularui,angularuirouter'
+
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
