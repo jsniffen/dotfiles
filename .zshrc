@@ -21,6 +21,6 @@ alias tns='tmux new-session -s'
 alias tmux="tmux -2"
 alias la="ls -a" 
 
-BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
