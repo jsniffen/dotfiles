@@ -48,6 +48,7 @@ Plug 'Raimondi/delimitMate' "automatic closing of quotes, parenthesis, brackets,
 Plug 'scrooloose/syntastic' "syntax checking for vim
 Plug 'Shougo/neocomplete.vim' "autocomplete
 Plug 'ervandew/supertab' "use tab for autocomplete
+Plug 'terryma/vim-multiple-cursors' "multiple cursors
 
 " Snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
