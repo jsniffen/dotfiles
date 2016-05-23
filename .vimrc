@@ -81,7 +81,7 @@ let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeShowHidden=1
 
 " CtrlP
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|build|vendor|docs)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode='0'
 
