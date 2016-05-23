@@ -4,6 +4,9 @@ filetype plugin indent on
 
 set rtp+=$HOME/.vim/bundle/Vundle.vim
 
+" auto reload files
+autocmd bufwritepost .vimrc source ~/.vimrc
+
 " disable swapfiles
 set noswapfile
 set nobackup
@@ -67,6 +70,8 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'burnettk/vim-angular'
 
 call plug#end()
+
+" rebindings
 
 " colorscheme
 set background=dark
