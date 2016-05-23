@@ -23,6 +23,7 @@ set backspace=indent,eol,start
 set title "set terminal title
 set number "show line numbers
 set encoding=utf-8
+set nowrap "don't wrap lines
 
 " indentation
 set autoindent
