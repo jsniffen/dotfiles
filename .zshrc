@@ -4,7 +4,7 @@
 
 ZSH_THEME="my-theme"
 
-plugins=(zsh-syntax-highlighting bower chucknorris svn)
+plugins=(git zsh-syntax-highlighting bower chucknorris svn)
 
 # User configuration
 
