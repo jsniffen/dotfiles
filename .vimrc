@@ -16,11 +16,14 @@ set nowb
 set history=1000
 
 " smarter searching
-set ignorecase 
+set ignorecase
 set smartcase
 
 " intuitive backspace
 set backspace=indent,eol,start
+
+" allow mouse selecting
+set mouse=a
 
 " styling
 set title "set terminal title
@@ -64,9 +67,13 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-sleuth'
 
 " language plugins
-Plug 'pangloss/vim-javascript'
-Plug 'mattn/emmet-vim'
+" Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'burnettk/vim-angular'
 
 call plug#end()
@@ -77,8 +84,10 @@ call plug#end()
 set background=dark
 set t_Co=256
 set term=screen-256color
-let base16colorspace=256
-colorscheme base16-solarized
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+endif
 
 " nerdtree
 map <F2> :NERDTreeToggle<CR>
@@ -95,6 +104,8 @@ set laststatus=2
 set timeoutlen=1000 ttimeoutlen=0
 let g:airline_theme='base16'
 let g:airline_powerline_fonts=1
+" let g:airline#extensions#tabline#enabled=1
+" let g:airline#extensions#tabline#buffer_min_count=2
 
 " javascript libraries syntax
 let g:used_javascript_libs = 'jquery,angularjs,angularui,angularuirouter'

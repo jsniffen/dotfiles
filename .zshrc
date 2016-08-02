@@ -4,7 +4,7 @@
 
 ZSH_THEME="my-theme"
 
-plugins=(git zsh-syntax-highlighting)
+plugins=(zsh-syntax-highlighting bower chucknorris svn)
 
 # User configuration
 
@@ -21,6 +21,6 @@ alias tns='tmux new-session -s'
 alias tmux="tmux -2"
 alias la="ls -a" 
 
-BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
