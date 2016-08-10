@@ -2,7 +2,10 @@
   export ZSH=/cygdrive/c/home/.oh-my-zsh
   export TERM="xterm-256color"
 
-ZSH_THEME="my-theme"
+ZSH_THEME="agnoster"
+# ZSH_THEME="simple"
+# ZSH_THEME="garyblessington"
+# ZSH_THEME="minimal"
 
 plugins=(git zsh-syntax-highlighting bower chucknorris svn)
 
