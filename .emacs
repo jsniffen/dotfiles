@@ -42,11 +42,29 @@
   :config
   (general-evil-setup t)
   (nmap :prefix ","
-	"f" 'find-file
-	"g s" 'magit-status))
+	"f" 'find-file))
+
+(use-package ivy
+  :ensure t
+  :config
+  (ivy-mode 1))
+
+(use-package swiper
+  :ensure t
+  :config
+  (general-evil-setup t)
+  (nmap :prefix ","
+	"l" 'swiper))
+
+(use-package counsel
+  :ensure t)
 
 (use-package magit
-  :ensure t)
+  :ensure t
+  :config
+  (general-evil-setup t)
+  (nmap :prefix ","
+	"g s" 'magit-status))
 
 (use-package evil-magit
   :ensure t)
