@@ -9,6 +9,7 @@
 (set-frame-font "Monaco 16")
 
 (setq custom-safe-themes t)
+(setq vc-follow-symlinks t)
 (setq make-backup-files nil)
 (setq inhibit-splash-screen t)
 (setq ring-bell-function 'ignore)
@@ -16,18 +17,9 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (general magit zenburn-theme use-package evil))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -44,7 +36,18 @@
   (load-theme 'zenburn))
 
 (use-package general
-  :ensure t)
+  :ensure t
+  :config
+  (general-evil-setup t)
+  (nmap :prefix ","
+	"s k" 'split-window-vertically
+	"s l" (lambda () (interactive) (split-window-horizontally) (windmove-right))
+	"s j" (lambda () (interactive) (split-window-vertically) (windmove-down))
+	"s h" 'split-window-horizontally
+	"q" (lambda () (interactive) (if (one-window-p)
+					 (kill-this-buffer)
+				       (delete-window)))
+	"d" 'switch-to-buffer))
 
 (use-package ivy
   :ensure t
@@ -78,7 +81,12 @@
 (use-package autopair
   :ensure t
   :config
-  (autopair-mode 1))
+  (autopair-global-mode 1))
+
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (rainbow-delimiters-mode))
 
 ;; languages
 (use-package php-mode
