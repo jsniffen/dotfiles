@@ -10,6 +10,8 @@
 (set-frame-font "Consolas 16")
 
 (setq custom-safe-themes t)
+(setq inhibit-splash-screen t)
+(setq backup-directory-alist `(("." . "~/.saves")))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -38,11 +40,7 @@
   (load-theme 'zenburn))
 
 (use-package general
-  :ensure t
-  :config
-  (general-evil-setup t)
-  (nmap :prefix ","
-	"f" 'find-file))
+  :ensure t)
 
 (use-package ivy
   :ensure t
@@ -58,6 +56,10 @@
 
 (use-package counsel
   :ensure t)
+  :config
+  (general-evil-setup t)
+  (nmap :prefix ","
+	"f" 'counsel-find-file))
 
 (use-package magit
   :ensure t
@@ -67,4 +69,8 @@
 	"g s" 'magit-status))
 
 (use-package evil-magit
+  :ensure t)
+
+;; languages
+(use-package php-mode
   :ensure t)
