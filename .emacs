@@ -6,12 +6,12 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-(set-frame-font "Consolas 16")
+(set-frame-font "Monaco 16")
 
-(setq visible-bell t)
 (setq custom-safe-themes t)
 (setq make-backup-files nil)
 (setq inhibit-splash-screen t)
+(setq ring-bell-function 'ignore)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
