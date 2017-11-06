@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -9,9 +8,10 @@
 (scroll-bar-mode -1)
 (set-frame-font "Consolas 16")
 
+(setq visible-bell t)
 (setq custom-safe-themes t)
+(setq make-backup-files nil)
 (setq inhibit-splash-screen t)
-(setq backup-directory-alist `(("." . "~/.saves")))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -28,6 +28,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 (use-package evil
   :ensure t
@@ -55,7 +59,7 @@
 	"l" 'swiper))
 
 (use-package counsel
-  :ensure t)
+  :ensure t
   :config
   (general-evil-setup t)
   (nmap :prefix ","
@@ -70,6 +74,11 @@
 
 (use-package evil-magit
   :ensure t)
+
+(use-package autopair
+  :ensure t
+  :config
+  (autopair-mode 1))
 
 ;; languages
 (use-package php-mode
