@@ -16,6 +16,7 @@
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -35,6 +36,12 @@
   :config
   (load-theme 'zenburn))
 
+(use-package linum-relative
+  :ensure t
+  :config
+  (setq linum-relative-current-symbol "")
+  (linum-relative-global-mode 1))
+
 (use-package general
   :ensure t
   :config
@@ -48,6 +55,11 @@
 					 (kill-this-buffer)
 				       (delete-window)))
 	"d" 'switch-to-buffer))
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode 1))
 
 (use-package ivy
   :ensure t
@@ -67,6 +79,11 @@
   (general-evil-setup t)
   (nmap :prefix ","
 	"f" 'counsel-find-file))
+
+(use-package counsel-projectile
+  :ensure t
+  :config
+  (counsel-projectile-on))
 
 (use-package magit
   :ensure t
@@ -88,6 +105,20 @@
   :config
   (rainbow-delimiters-mode))
 
+(use-package company
+  :ensure t
+  :config
+  (global-company-mode 1))
+
+(use-package ag
+  :ensure t)
+
 ;; languages
 (use-package php-mode
+  :ensure t)
+
+(use-package php-extras
+  :ensure t)
+
+(use-package web-mode
   :ensure t)
