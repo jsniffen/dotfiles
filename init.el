@@ -8,11 +8,12 @@
 (scroll-bar-mode -1)
 (set-frame-font "Hack 18")
 
-(setq custom-safe-themes t)
-(setq vc-follow-symlinks t)
-(setq make-backup-files nil)
-(setq inhibit-splash-screen t)
-(setq ring-bell-function 'ignore)
+(setq auto-save-default nil
+      make-backup-files nil
+      vc-follow-symlinks t
+      custom-safe-themes t
+      inhibit-splash-screen t
+      ring-bell-function 'ignore)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
