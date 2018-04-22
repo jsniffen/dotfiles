@@ -6,7 +6,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-(set-frame-font "Monaco 16")
+(set-frame-font "Hack 18")
 
 (setq custom-safe-themes t)
 (setq vc-follow-symlinks t)
@@ -31,10 +31,10 @@
   :config
   (evil-mode 1))
 
-(use-package zenburn-theme
+(use-package solarized-theme
   :ensure t
   :config
-  (load-theme 'zenburn))
+  (load-theme 'solarized-dark))
 
 (use-package linum-relative
   :ensure t
@@ -47,13 +47,7 @@
   :config
   (general-evil-setup t)
   (nmap :prefix ","
-	"s k" 'split-window-vertically
-	"s l" (lambda () (interactive) (split-window-horizontally) (windmove-right))
-	"s j" (lambda () (interactive) (split-window-vertically) (windmove-down))
-	"s h" 'split-window-horizontally
-	"q" (lambda () (interactive) (if (one-window-p)
-					 (kill-this-buffer)
-				       (delete-window)))
+	"x" 'execute-extended-command
 	"d" 'switch-to-buffer))
 
 (use-package projectile
