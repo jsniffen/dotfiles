@@ -1,35 +1,21 @@
-" enable filetype detection
-filetype on
+set autoread
+set noswapfile
+color industry
 
-" line numbers
-set relativenumber
-set number
+let mapleader = ','
 
-" leaders
-let mapleader = ","
-let maplocalleader = "\\"
+call plug#begin()
 
-" remap normal mode
-inoremap jk <esc>
-inoremap <esc> <nop>
+Plug 'kien/ctrlp.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
-" move lines up and down
-nnoremap <leader>- ddp
-nnoremap <leader>_ ddk<s-p>
+call plug#end()
 
-" capitalize the previous word
-inoremap <leader><c-u> <esc>vawU<s-a>
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_custom_ignore = 'venv\|\.git\|__pycache__\|node_modules'
 
-" edit vimrc in a split
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :so $MYVIMRC<CR>
+nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>rr :redraw!<CR>
 
-" source vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" surround with quotes
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-
-" surround visual selection with quotes
-vnoremap <leader>" <esc>`<i"<esc>`>la"
-vnoremap <leader>' <esc>`<i'<esc>`>la'
+syntax off
